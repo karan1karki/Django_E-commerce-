@@ -1,4 +1,3 @@
-// For register.html
 const registerForm = document.getElementById('register-form');
 if (registerForm) {
     registerForm.addEventListener('submit', async (e) => {
@@ -25,7 +24,6 @@ if (registerForm) {
     });
 }
 
-// For login.html
 const loginForm = document.getElementById('login-form');
 if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
@@ -43,8 +41,8 @@ if (loginForm) {
         if (response.ok) {
             localStorage.setItem('access', result.access);
             localStorage.setItem('refresh', result.refresh);
-            alert('Logged in! Tokens stored in localStorage.');
-            // Use access token for protected e-commerce APIs
+            const redirecturl = '/dashboard';
+            window.location.href = redirecturl;    
         } else {
             alert('Error: ' + JSON.stringify(result));
         }

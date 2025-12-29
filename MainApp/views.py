@@ -6,7 +6,7 @@ from .serializers import RegisterSerializer
 from django.shortcuts import redirect
 
 def home_redirect(request):
-    return redirect('login_page')
+    return redirect('home_page')
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
@@ -34,3 +34,6 @@ class LoginView(generics.GenericAPIView):
                 'access': str(refresh.access_token),
             })
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+    
+
+    #  Route -> get, post, put, delete, patch, option

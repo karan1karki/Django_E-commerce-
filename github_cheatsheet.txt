@@ -1,0 +1,5 @@
+Adding all the files -> git add .
+Changing Branch name -> git Branch -M main , git branch branch_name
+message -> git commit -m " meaasges"
+new reprosotries -> git repro github_new_name
+Push -> git push -u origin main , git push branch_name
