@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Demo Store</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 1rem;
+        }
+        .price { font-size: 1.3rem; color: #e44d26; font-weight: bold; }
+        .stock { color: #28a745; }
+        .out-of-stock { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <header style="padding: 1rem; background: #333; color: white; text-align: center;">
+        <h1>Demo E-commerce Store</h1>
+        <a href="{% url 'login_page' %}" style="color: #fff; margin: 0 1rem;">Login</a>
+        <a href="{% url 'register_page' %}" style="color: #fff;">Register</a>
+    </header>
+
+    <main>
+        <h2 style="text-align: center; margin: 2rem 0;">Our Products</h2>
+        <div class="product-grid" id="product-list">
+            <!-- Products will be loaded here by JS -->
+        </div>
+    </main>
+
+    <script src="{% static 'js/products.js' %}"></script>
+</body>
+</html>
